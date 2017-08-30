@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="bg">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" xmlns="">
+    <meta name="robots" content="noindex, nofollow" />
+
+    <title>BGescort - ескорт обяви | Ескорт, Компаньонки, травестити</title>
+
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="./images/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" type="text/css" href="./node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="./node_modules/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="./styles/style.css" />
+
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <script src="./node_modules/systemjs/dist/system.js"></script>
+    <script src="./config.js"></script>
+</head>
+
+<body>
+    <script>
+        System.import('main');
+    </script>
+
+    <div class="topStripe"></div>
+
+    <header class="header">
+        <div class="wrap clearfix">
+            <div class="logo">
+                <a href="index.html" title="BGescort - ескорт обяви"></a>
+            </div>
+
+            <nav class="header__menu">
+                <a class="header__trigger header__trigger--menu">
+                    <span class="fa fa-2x fa-navicon"></span>
+                </a>
+                <div class="header__menuLinks">
+                    <!-- Add link name to title tag as well -->
+                    <a href="index.html" title="">Начало</a>
+                    <a href="listаds.html" title="">Обяви</a>
+                    <a href="#" title="">Малки обяви</a>
+                    <a href="#" title="">VIP зона</a>
+                    <a href="#" title="">Контакти</a>
+                </div>
+            </nav>
+
+            <a class="header__trigger header__trigger--userAccount">
+                <span class="fa fa-2x fa-user-circle-o"></span>
+            </a>
+
+            <div class="header__userAccountOverlay"></div>
+
+            <div class="header__userAccount hidden">
+                <button type="button" class="btn btn-md btn--login" data-toggle="modal" data-target="#login-modal">Вход</button>
+                <button type="button" class="btn btn-md btn--pink" data-toggle="modal" data-target="#register-modal">Регистрация</button>
+            </div>
+
+            <!-- Login Modal -->
+            <div id="login-modal" class="userAccountPopup modal fade" role="dialog">
+                <div class="modal-dialog">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="loginFields">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <img id="img_logo" src="./images/logo-bright.png">
+                            </div>
+                            <div class="modal-body">
+                                <input id="login_email" class="form-control" type="text" placeholder="Email" required>
+                                <input id="login_password" class="form-control" type="password" placeholder="Парола" required>
+                                <div class="rememberUser checkbox">
+                                    <label><input type="checkbox" value="">Запомни ме</label>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn--pink btn-lg btn-block">Вход</button>
+                                <div>
+                                    <button id="lostPassword" type="button" class="btn btn-link">Забравена парола?</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="lostPasswordFields">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <img id="img_logo" src="./images/logo-bright.png">
+                            </div>
+                            <div class="modal-body">
+                                <input id="forgetPassword_email" class="form-control" type="text" placeholder="Email" required>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn--pink btn-lg btn-block">Изпрати</button>
+                                <div>
+                                    <button id="loginBtn" type="button" class="btn btn-link">Вход в системата</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End of Modal content -->
+                </div>
+            </div>
+            <!-- End of Login Modal -->
+
+            <!-- Register Modal -->
+            <div id="register-modal" class="userAccountPopup modal fade" role="dialog">
+                <div class="modal-dialog">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <img id="img_logo" src="./images/logo-bright.png">
+                        </div>
+                        <div class="modal-body">
+                            <input id="login_email" class="form-control" type="text" placeholder="Email" required>
+                            <input id="login_password" class="form-control" type="password" placeholder="Парола" required>
+                            <input id="login_repassword" class="form-control" type="password" placeholder="Повтори паролата" required>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn--pink btn-lg btn-block">Регистрация</button>
+                        </div>
+                    </div>
+                    <!-- End of Modal content -->
+                </div>
+            </div>
+            <!-- End of Register Modal -->
+        </div>
+    </header>
+
+    <div class="categories">
+        <div class="wrap clearfix">
+            <div class="categories__trigger">
+                <a href="#">всички категории</a>
+            </div>
+
+            <div class="categories__list">
+                <!-- Add category name to title tag as well -->
+                <a href="#" title="">
+                    <span class="categories__text">Компаньонки</span>
+                    <span class="categories__count">(944)</span>
+                </a>
+                <a href="#" title="">
+                    <span class="categories__text">Травестити - Shemale</span>
+                    <span class="categories__count">(125)</span>
+                </a>
+                <a href="#" title="">
+                    <span class="categories__text">Жиголо</span>
+                    <span class="categories__count">(145)</span>
+                </a>
+                <a href="#" title="">
+                    <span class="categories__text">Мъж търси мъж</span>
+                    <span class="categories__count">(32)</span>
+                </a>
+                <a href="#" title="">
+                    <span class="categories__text">Мъж търси жена</span>
+                    <span class="categories__count">(88)</span>
+                </a>
+                <a href="#" title="">
+                    <span class="categories__text">Жена търси мъж</span>
+                    <span class="categories__count">(50)</span>
+                </a>
+                <a href="#" title="">
+                    <span class="categories__text">Жена търси жена</span>
+                    <span class="categories__count">(70)</span>
+                </a>
+                <a href="#" title="">
+                    <span class="categories__text">Масажи</span>
+                    <span class="categories__count">(152)</span>
+                </a>
+                <a href="#" title="">
+                    <span class="categories__text">Секс по телефона</span>
+                    <span class="categories__count">(152)</span>
+                </a>
+                <a href="#" title="">
+                    <span class="categories__text">BDSM обяви</span>
+                    <span class="categories__count">(152)</span>
+                </a>
+                <a href="#" title="">
+                    <span class="categories__text">Двойки</span>
+                    <span class="categories__count">(152)</span>
+                </a>
+                <a href="#" title="">
+                    <span class="categories__text">Предлагам работа</span>
+                    <span class="categories__count">(152)</span>
+                </a>
+                <a href="#" title="">
+                    <span class="categories__text">Виртуален секс</span>
+                    <span class="categories__count">(152)</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="searchBox">
+        <div class="wrap">
+            <h2 class="searchBox__title">Търсете измежду 7544 обяви в 12 категории.</h2>
+
+            <form class="searchBox__form">
+                <div class="searchBox__formGroup">
+                    <label class="sr-only" for="searchCategory">Избери категория</label>
+                    <select class="searchBox__formElement" id="searchCategory" placeholder="Избери категория">
+                        <option value="AllCategories">Избери категория</option>
+                        <option value="">Компаньонки</option>
+                        <option value="">Мъж търси жена</option>
+                        <option value="">Мъж търси мъж</option>
+                        <option value="">Жена търси мъж</option>
+                        <option value="">Жена търси жена</option>
+                    </select>
+                </div>
+
+                <div class="fullSearchBox">
+                    <div class="searchBox__formGroup">
+                        <label class="sr-only" for="searchCity">Избери град</label>
+                        <select class="searchBox__formElement" id="searchCity" placeholder="Избери категория">
+                            <option value="AllCities">Избери град</option>
+                            <option value="">София</option>
+                            <option value="">Пловдив</option>
+                            <option value="">Варна</option>
+                            <option value="">Бургас</option>
+                            <option value="">Стара Загора</option>
+                            <option value="">Горна Оряховица</option>
+                        </select>
+                    </div>
+                    <div class="searchBox__formGroup searchPrice rightMargin">
+                        <label class="sr-only" for="searchMinPrice">Цена от</label>
+                        <input type="text" class="searchBox__formElement searchPriceInput" id="searchMinPrice" placeholder="Цена от" />
+                    </div>
+                    <div class="searchBox__formGroup searchPrice">
+                        <label class="sr-only" for="searchMaxPrice">Цена до</label>
+                        <input type="text" class="searchBox__formElement searchPriceInput" id="searchMaxPrice" placeholder="Цена до" />
+                    </div>
+                    <div class="searchBox__formGroup">
+                        <label class="sr-only" for="searchKeyword">Ключова дума</label>
+                        <input type="text" class="searchBox__formElement" id="searchKeyword" placeholder="Ключова дума" />
+                    </div>
+                </div>
+
+                <a href="#" class="searchBox__trigger">
+                    <span class="searchBox__triggerShow">
+                        <span class="searchBox__triggerText">покажи още</span>
+                        <span class="searchBox__triggerIcon fa fa-2x fa-arrow-circle-down"></span>
+                    </span>
+                    <span class="searchBox__triggerHide">
+                        <span class="searchBox__triggerText">скрий</span>
+                        <span class="searchBox__triggerIcon fa fa-2x fa-arrow-circle-up"></span>
+                    </span>
+                </a>
+
+                <button type="submit" class="searchBox__button btn btn-md btn--yellow"><span class="searchBox__buttonIcon fa fa-search"></span>Търси</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="wrap">
+            <h2 class="heading">
+                <strong>Lipsum dolor sit amet, consectetur adipisicing elit. Deleniti, facilis?</strong>
+            </h2>
+
+            <div class="adBox adDetails clearfix">
+                <div class="adDetails__gallery galleryBox">
+                    <div class="galleryBox__mainPhoto">
+                        <a id="mainPhotoPreview" style="background-image: url(https://stylistmanifesto.files.wordpress.com/2009/06/p_500_331_e76161d9-a17d-47f8-b510-d3dd1a7a4344.jpeg);"></a>
+                    </div>
+                    <button class="galleryBox__listPhotoCTA">ПОВЕЧЕ СНИМКИ</button>
+                    <div class="galleryBox__listPhoto clearfix">
+                        <div><a style="background-image: url('https://stylistmanifesto.files.wordpress.com/2009/06/p_500_331_e76161d9-a17d-47f8-b510-d3dd1a7a4344.jpeg');"></a></div>
+                        <div><a style="background-image: url(https://mrpopat.in/admin/upload/wallpaper/201303151363333043897880347.jpg);"></a></div>
+                        <div><a style="background-image: url('https://ae01.alicdn.com/kf/HTB196EDHFXXXXb9XVXXq6xXFXXXN/Hot-Sale-New-Design-Animal-Print-Swimsuit-sexy-bikini-swimwear-for-girls-6S4150-Free-shipping-leopard.jpg');"></a></div>
+                        <div><a style="background-image: url('./images/testphotos/photo4.jpg');"></a></div>
+                        <div><a style="background-image: url('./images/testphotos/photo5.jpg');"></a></div>
+                    </div>
+                </div>
+
+                <div class="adDetails__info infoSection">
+                    <div class="infoSection__group">
+                        <div class="infoSection__key">Категория: </div>
+                        <div class="infoSection__value">Компаньонки</div>
+                    </div>
+                    <div class="infoSection__group">
+                        <div class="infoSection__key">Град: </div>
+                        <div class="infoSection__value">Горна Оряховица</div>
+                    </div>
+                    <div class="infoSection__group">
+                        <div class="infoSection__key">Цена: </div>
+                        <div class="infoSection__value">200 лв. / час</div>
+                    </div>
+                    <div class="infoSection__group">
+                        <div class="infoSection__key">Работно време: </div>
+                        <div class="infoSection__value">от 22:00 до 5:00 ч.</div>
+                    </div>
+                    <div class="infoSection__group">
+                        <div class="infoSection__key">Телефон: </div>
+                        <div class="infoSection__value">0878694919</div>
+                    </div>
+                    <div class="infoSection__group">
+                        <div class="infoSection__key">Години: </div>
+                        <div class="infoSection__value">27</div>
+                    </div>
+                    <div class="infoSection__group">
+                        <div class="infoSection__key">Лице за контакт: </div>
+                        <div class="infoSection__value">Lorem Ipsum</div>
+                    </div>
+
+                    <div class="infoSection__promote promoBox">
+                        <div class="promoBox__heading">
+                            Промотирай тази обява
+                        </div>
+                        
+                        <div class="promoBox__group clearfix">
+                            <div class="promoBox__key">
+                                <span class="fa fa-star redColor" style="font-size: 1.6em; position: relative; top: 3px; margin-right: 3px;"></span> Направи <span class="heading__highlight redColor">TOP</span> обява
+                            </div>
+                            <div class="promoBox__value">
+                                <button type="button" class="btn btn-sm btn--yellow">Избери</button>
+                            </div>
+                        </div>
+                        
+                        <div class="promoBox__group clearfix">
+                            <div class="promoBox__key">
+                                <span class="fa fa-star yellowColor" style="font-size: 1.6em; position: relative; top: 3px; margin-right: 3px;"></span> Направи <span class="heading__highlight yellowColor">VIP</span> обява
+                            </div>
+                            <div class="promoBox__value">
+                                <button type="button" class="btn btn-sm btn--yellow">Избери</button>
+                            </div>
+                        </div>
+                        
+                        <div class="promoBox__group" style="position: relative;">
+                            <a href="#" style="display: block; color: #fff;">
+                                <span class="fa fa-info" style="font-size: 1.6em; position: relative; top: 3px; margin-right: 10px;"></span>Повече информация
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="adDetailsTabsNavigation">
+                <button class="btn btn--grey btn--greyActive" data-tab="detailsTabsFirst"><span class="fa fa-vcard"></span>Описане</button>
+                <button class="btn btn--grey" data-tab="detailsTabsSecond"><span class="fa fa-list-ul"></span>Какво предлагам</button>
+                <button class="btn btn--grey" data-tab="detailsTabsThird"><span class="fa fa-comments"></span>Коментари</button>
+            </div>
+
+            <div class="adBox adDetailsTabs clearfix">
+                <div class="adDetailsTabs__description descriptionTabs">
+                    <div class="descriptionTabs__first" data-tab="detailsTabsFirst">
+                        <h3>Описание</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat ea sunt itaque nihil accusantium, doloribus voluptatem sint error tenetur esse similique beatae, soluta delectus dolorem minus placeat quis nemo voluptatum officiis odit neque quae cupiditate optio quam! Laboriosam possimus molestiae ex repellat in! Nesciunt deserunt iure, earum, culpa corporis ut.</p>
+                    </div>
+                    <div class="descriptionTabs__second" data-tab="detailsTabsSecond">
+                        <h3>Какво предлагам</h3>
+                        <div><span class="fa fa-check"></span> Собствен терен</div>
+                        <div><span class="fa fa-check"></span> На Ваш терен</div>
+                        <div><span class="fa fa-check"></span> Орален</div>
+                        <div><span class="fa fa-check"></span> Стандартен</div>
+                        <div><span class="fa fa-check"></span> Секс с ръка</div>
+                        <div><span class="fa fa-check"></span> Дълбоко гърло</div>
+                        <div><span class="fa fa-check"></span> За друго ме попитайте</div>
+                        <div><span class="fa fa-check"></span> Дискретна връзка</div>
+                    </div>
+                    
+                    <div class="descriptionTabs__third" data-tab="detailsTabsThird">
+                        <h3>Коментари</h3>
+                        <p>Няма добавени коментари.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="alert alert-danger adDetailsReport">
+                <span class="fa fa-bell-o"></span>
+                <p>Ако виждате нередност в тази обява, моля, сигнализирайте ни чрез бутона по-долу!</p>
+                <button class="btn btn-danger">Сигнализирай</button>
+            </div>
+
+            <!-- ROW -->
+            <div class="contentHolder clearfix">
+                <h2 class="heading">
+                    <span class="heading__highlight">Други</span> Обяви
+                </h2>
+                <div class="adBox adBox--small">
+                    <div class="adBox__image adImage">
+                        <a href="#" title="">
+                            <img src="./images/testphotos/photo2.jpg" alt="" />
+                            <span class="adImage__details adImage__details--photosCount">
+                                6 <span class="fa fa-camera"></span>
+                            </span>
+                            <span class="adImage__details adImage__details--location">София</span>
+                        </a>
+                    </div>
+                    <div class="adBox__text">
+                        <a href="#" title="">
+                            Лили Вип ескорт ! Посещавам ваш адрес.
+                    </div>
+                    <div class="adBox__category">
+                        <span class="fa fa-list-alt"></span>
+                        <a href="#" title="">Компаньонки</a>
+                    </div>
+                </div>
+
+                <div class="adBox adBox--small">
+                    <div class="adBox__image adImage">
+                        <a href="#" title="">
+                            <img src="./images/testphotos/photo5.jpg" alt="" />
+                            <span class="adImage__details adImage__details--photosCount">
+                                5 <span class="fa fa-camera"></span>
+                            </span>
+                            <span class="adImage__details adImage__details--location">Горна Оряховица</span>
+                        </a>
+                    </div>
+                    <div class="adBox__text">
+                        <a href="#" title="">
+                            Сузана.Струва си да ме опиташ!!!
+                        </a>
+                    </div>
+                    <div class="adBox__category">
+                        <span class="fa fa-list-alt"></span>
+                        <a href="#" title="">Компаньонки</a>
+                    </div>
+                </div>
+
+                <div class="adBox adBox--small">
+                    <div class="adBox__image adImage">
+                        <a href="#" title="">
+                            <img src="./images/testphotos/photo3.jpg" alt="" />
+                            <span class="adImage__details adImage__details--photosCount">
+                                15 <span class="fa fa-camera"></span>
+                            </span>
+                            <span class="adImage__details adImage__details--location">Бургас</span>
+                        </a>
+                    </div>
+                    <div class="adBox__text">
+                        <a href="#" title="">
+                            Лили Вип ескорт ! Посещавам ваш адрес.
+                        </a>
+                    </div>
+                    <div class="adBox__category">
+                        <span class="fa fa-list-alt"></span>
+                        <a href="#" title="">Компаньонки</a>
+                    </div>
+                </div>
+
+                <div class="adBox adBox--small">
+                    <div class="adBox__image adImage">
+                        <a href="#" title="">
+                            <img src="./images/testphotos/photo7.jpg" alt="" />
+                            <span class="adImage__details adImage__details--photosCount">
+                                5 <span class="fa fa-camera"></span>
+                            </span>
+                            <span class="adImage__details adImage__details--location">София</span>
+                        </a>
+                    </div>
+                    <div class="adBox__text">
+                        <a href="#" title="">
+                            27Г.жена свободна за секс,желае страст без ангажименти. Искаш ли да ми дойдеш на гости?
+                        </a>
+                    </div>
+                    <div class="adBox__category">
+                        <span class="fa fa-list-alt"></span>
+                        <a href="#" title="">Компаньонки</a>
+                    </div>
+                </div>
+
+                <div class="adBox adBox--small">
+                    <div class="adBox__image adImage">
+                        <a href="#" title="">
+                            <img src="./images/testphotos/photo9.jpg" alt="" />
+                            <span class="adImage__details adImage__details--photosCount">
+                                5 <span class="fa fa-camera"></span>
+                            </span>
+                            <span class="adImage__details adImage__details--location">София</span>
+                        </a>
+                    </div>
+                    <div class="adBox__text">
+                        <a href="#" title="">
+                            нежна мила и много сладка сладурана
+                        </a>
+                    </div>
+                    <div class="adBox__category">
+                        <span class="fa fa-list-alt"></span>
+                        <a href="#" title="">Компаньонки</a>
+                    </div>
+                </div>
+
+                <div class="adBox adBox--small">
+                    <div class="adBox__image adImage">
+                        <a href="#" title="">
+                            <img src="./images/testphotos/photo1.jpg" alt="" />
+                            <span class="adImage__details adImage__details--photosCount">
+                                5 <span class="fa fa-camera"></span>
+                            </span>
+                            <span class="adImage__details adImage__details--location">София</span>
+                        </a>
+                    </div>
+                    <div class="adBox__text">
+                        <a href="#" title="">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate, delectus.
+                        </a>
+                    </div>
+                    <div class="adBox__category">
+                        <span class="fa fa-list-alt"></span>
+                        <a href="#" title="">Компаньонки</a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="popularTags">
+        <div class="wrap">
+            skype gay, търся травестит, sex obqwi, обяви за масаж с свобождаване за мъже, escort bayan ilanlar arkadaşlık türkiye, krasivi
+            ompanionki stara zagora, Чат / Chat, Dominatrix, Crossdressers, Escort Romania girls , Μπουρδέλα πόρνη αγγελίες
+            Μπουρδέλα, kara starr ladyboy shemale review, Sofia gay map, Escorts & Massages, momicheta na povikvane ot stara
+            zagora, травестит в софия, shemales service, обяви, еротичен, eskort bg,
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="wrap clearfix">
+            <div class="footer__col footer__col--categories clearfix">
+                <h3>Категории</h3>
+                <ul>
+                    <li><a href="#" title="">Компаньонки</a></li>
+                    <li><a href="#" title="">Травестити - Shemale</a></li>
+                    <li><a href="#" title="">Жиголо</a></li>
+                    <li><a href="#" title="">Мъж търси мъж</a></li>
+                    <li><a href="#" title="">Мъж търси жена</a></li>
+                    <li><a href="#" title="">Жена търси жена</a></li>
+                </ul>
+                <ul>
+                    <li><a href="#" title="">Масажи</a></li>
+                    <li><a href="#" title="">Секс по телефона</a></li>
+                    <li><a href="#" title="">BDSM обяви</a></li>
+                    <li><a href="#" title="">Двойки</a></li>
+                    <li><a href="#" title="">Предлагам работа</a></li>
+                    <li><a href="#" title="">Виртуален секс</a></li>
+                </ul>
+            </div>
+            <div class="footer__col clearfix">
+                <h3>Популярни</h3>
+                <ul>
+                    <li><a href="#" title="">Компаньонки от София</a></li>
+                    <li><a href="#" title="">Компаньонки от Пловдив</a></li>
+                    <li><a href="#" title="">Травестити от София</a></li>
+                    <li><a href="#" title="">Масажи в София</a></li>
+                    <li><a href="#" title="">Травестити от Варна</a></li>
+                    <li><a href="#" title="">Компаньонки от Бургас</a></li>
+                </ul>
+            </div>
+            <div class="footer__col clearfix">
+                <h3>Партньори</h3>
+                <ul>
+                    <li><a href="#" title="">Ремонт и поправка на телевизори от tvserviz.com и tvserviz.info</a></li>
+                </ul>
+            </div>
+            <div class="footer__col clearfix">
+                <h3>За сайта</h3>
+                <ul>
+                    <li><a href="#" title="">Контакти</a></li>
+                    <li><a href="#" title="">Условия за ползване</a></li>
+                </ul>
+                <div class="watermark">
+                    <img src="./images/watermark.png" alt="" />
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="scrollTop">
+        <span class="fa fa-2x fa-angle-double-up"></span>
+    </div>
+</body>
+
+</html>
